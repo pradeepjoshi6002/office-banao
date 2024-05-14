@@ -1,25 +1,25 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import HomePageImage from "../../components/HomePageImage";
 import AddButton from "../../components/AddButton";
 import SearchBox from "../../components/SearchBox";
 import FilterButton from "../../components/FilterButton";
 import MasonryGrid from "../../components/MasonryGrid";
-import one from "../../utils/one.png";
-import two from "../../utils/two.png";
-import three from "../../utils/three.png";
-import four from "../../utils/four.png";
-import five from "../../utils/five.png";
+import { Link } from "react-router-dom";
 
-const HomePage = () => {
-  const [images, setImages] = useState([one, two, three, four, five]);
+const HomePage = ({ images, setEditImage }) => {
   const fileInputRef = useRef(null);
+  const editorRef = useRef(null);
+  const openEditor = (newImage) => {
+    setEditImage(newImage);
+    editorRef.current.click();
+  };
 
   const handleFileChange = (event) => {
     const fileList = event.target.files;
-    const newImages = Array.from(fileList).map((file) =>
+    const newImage = Array.from(fileList).map((file) =>
       URL.createObjectURL(file)
-    );
-    setImages([...images, ...newImages]);
+    )[0];
+    openEditor(newImage);
     fileInputRef.current.value = null;
   };
 
@@ -56,6 +56,7 @@ const HomePage = () => {
         onChange={handleFileChange}
         multiple
       />
+      <Link to={"/edit"} ref={editorRef} />
     </div>
   );
 };
