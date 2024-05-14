@@ -5,9 +5,13 @@ import SearchBox from "../../components/SearchBox";
 import FilterButton from "../../components/FilterButton";
 import MasonryGrid from "../../components/MasonryGrid";
 import one from "../../utils/one.png";
+import two from "../../utils/two.png";
+import three from "../../utils/three.png";
+import four from "../../utils/four.png";
+import five from "../../utils/five.png";
 
 const HomePage = () => {
-  const [images, setImages] = useState([one]);
+  const [images, setImages] = useState([one, two, three, four, five]);
   const fileInputRef = useRef(null);
 
   const handleFileChange = (event) => {
