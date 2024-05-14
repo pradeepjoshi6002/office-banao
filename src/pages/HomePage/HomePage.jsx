@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import HomePageImage from "../../components/HomePageImage";
 import AddButton from "../../components/AddButton";
 import SearchBox from "../../components/SearchBox";

@@ -7,9 +7,20 @@ import two from "./utils/two.png";
 import three from "./utils/three.png";
 import four from "./utils/four.png";
 import five from "./utils/five.png";
+import six from "./utils/six.png";
 
 const App = () => {
-  const [images, setImages] = useState([one, two, three, four, five]);
+  const [images, setImages] = useState([
+    one,
+    two,
+    three,
+    four,
+    five,
+    six,
+    one,
+    three,
+    four,
+  ]);
   const [editImage, setEditImage] = useState(null);
   return (
     <BrowserRouter>

@@ -1,11 +1,15 @@
 import React from "react";
+import { FaTag } from "react-icons/fa";
 
 const SelectDropDown = ({ name, data }) => {
   return (
-    <select className="w-[7rem] rounded-md border-2" name={name}>
+    <select
+      className="w-fit border-black text-black rounded-md border-2"
+      name={name}
+    >
       {data?.map((item, index) => (
         <option key={index} value={item}>
-          {item}
+          <FaTag /> {item}
         </option>
       ))}
     </select>
