@@ -1,8 +1,8 @@
 import React from "react";
 
-const SelectDropDown = ({ data }) => {
+const SelectDropDown = ({ name, data }) => {
   return (
-    <select className="w-[7rem] rounded-md">
+    <select className="w-[7rem] rounded-md border-2" name={name}>
       {data?.map((item, index) => (
         <option key={index} value={item}>
           {item}
